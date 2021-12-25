@@ -13,18 +13,25 @@
     <div id="settings">
         <h1>yblui-</h1>
         <div class="red">P</div>
-    <div class="blue">O</div>
-    <div class="purple">P</div>
-    <div class="green">!</div>
+        <div class="blue">O</div>
+        <div class="purple">P</div>
+        <div class="green">!</div>
         <form>
             Player 1: <input type="text" value="Player 1" id="p1name" />
         </form>
         <form>
             Player 2: <input type="text" value="Player 2" id="p2name" />
         </form>
-        <button onclick="play(document.getElementById('p1name').value,document.getElementById('p2name').value);">Play&gt;</button>
+        <form>
+            First to: <input type="text" value="3" id="gameFt" />
+        </form>
+        <form>
+            Win by: <input type="text" value="2" id="gameWb" />
+        </form>
+        <button
+            onclick="play(document.getElementById('p1name').value, document.getElementById('p2name').value,document.getElementById('gameFt').value,document.getElementById('gameWb').value);">Play&gt;</button>
     </div>
-    <p id="player">Player 1 Playing</p>
+    <p id="player">Player 1 is Playing</p>
     <br />
     <div class="full-zw"></div>
     <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="1"></div>

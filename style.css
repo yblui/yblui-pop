@@ -75,3 +75,9 @@ html, body, #settings {
 * {
     transition: 0.3s;
 }
+
+input{
+    border: none;
+    font-family: "Segoe UI", sans-serif;
+    font-size: xx-large;
+}
