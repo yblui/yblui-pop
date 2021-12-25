@@ -1,38 +1,54 @@
-div{
+div {
     width: 10vh;
-    height:10vh;
+    height: 10vh;
     border-radius: 50%;
     display: inline-block;
+    transition: 0.3s
 }
 
-.red{
+.red {
     background-color: #FF4136;
 }
 
-.orange{
+.orange {
     background-color: #FF851B;
 }
 
-.yellow{
+.yellow {
     background-color: #FFDC00;
 }
 
-.green{
+.green {
     background-color: #2ECC40;
 }
 
-.blue{
+.blue {
     background-color: #0074D9;
 }
 
-.purple{
+.purple {
     background-color: #B10DC9;
 }
 
-.full-zw{
-    width:10vh;
+.full-zw {
+    width: 10vh;
 }
 
-.half-zw{
+.half-zw {
     width: 5vh;
+}
+
+button {
+    border: none;
+    font-family: "Segoe UI", sans-serif;
+    font-size: xx-large;
+    border-radius: 1vw;
+}
+
+.btn-red {
+    background-color: rgb(255, 176, 176);
+}
+
+.btn-blue {
+    background-color: rgb(173, 214, 255);
 }
