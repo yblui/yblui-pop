@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>yblui-Pop!</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <div class="full-zw"></div>
-        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="1"></div>
-        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="2"></div>
-        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="3"></div>
-        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="4"></div>
-        <br>
-        <div class="half-zw"></div>
-        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="1"></div>
-        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="2"></div>
-        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="3"></div>
-        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="4"></div>
-        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="5"></div>
-        <br>
-        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="1"></div>
-        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="2"></div>
-        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="3"></div>
-        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="4"></div>
-        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="5"></div>
-        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="6"></div>
-        <br>
-        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="1"></div>
-        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="2"></div>
-        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="3"></div>
-        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="4"></div>
-        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="5"></div>
-        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="6"></div>
-        <br>
-        <div class="half-zw"></div>
-        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="1"></div>
-        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="2"></div>
-        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="3"></div>
-        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="4"></div>
-        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="5"></div>
-        <br>
-        <div class="full-zw"></div>
-        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="1"></div>
-        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="2"></div>
-        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="3"></div>
-        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="4"></div>
-        <br />
-        <button class="btn-red" onclick="togglePlayer();">&lt;Continue&gt;</button>
-        <button class="btn-blue" onclick="togglePlayer();">&lt;Continue&gt;</button>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>yblui-Pop!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="settings">
+        <h1>yblui-</h1>
+        <div class="red">P</div>
+    <div class="blue">O</div>
+    <div class="purple">P</div>
+    <div class="green">!</div>
+        <form>
+            Player 1: <input type="text" value="Player 1" id="p1name" />
+        </form>
+        <form>
+            Player 2: <input type="text" value="Player 2" id="p2name" />
+        </form>
+        <button onclick="play(document.getElementById('p1name').value,document.getElementById('p2name').value);">Play&gt;</button>
+    </div>
+    <p id="player">Player 1 Playing</p>
+    <br />
+    <div class="full-zw"></div>
+    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="1"></div>
+    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="2"></div>
+    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="3"></div>
+    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="4"></div>
+    <br>
+    <div class="half-zw"></div>
+    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="1"></div>
+    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="2"></div>
+    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="3"></div>
+    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="4"></div>
+    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="5"></div>
+    <br>
+    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="1"></div>
+    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="2"></div>
+    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="3"></div>
+    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="4"></div>
+    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="5"></div>
+    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="6"></div>
+    <br>
+    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="1"></div>
+    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="2"></div>
+    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="3"></div>
+    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="4"></div>
+    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="5"></div>
+    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="6"></div>
+    <br>
+    <div class="half-zw"></div>
+    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="1"></div>
+    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="2"></div>
+    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="3"></div>
+    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="4"></div>
+    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="5"></div>
+    <br>
+    <div class="full-zw"></div>
+    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="1"></div>
+    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="2"></div>
+    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="3"></div>
+    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="4"></div>
+    <br />
+    <button class="btn-red" onclick="togglePlayer();">&lt;Continue&gt;</button>
+    <button class="btn-blue" onclick="togglePlayer();">&lt;Continue&gt;</button>
+</body>
+
 </html>
