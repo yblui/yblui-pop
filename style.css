@@ -1,0 +1,38 @@
+div{
+    width: 10vh;
+    height:10vh;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red{
+    background-color: #FF4136;
+}
+
+.orange{
+    background-color: #FF851B;
+}
+
+.yellow{
+    background-color: #FFDC00;
+}
+
+.green{
+    background-color: #2ECC40;
+}
+
+.blue{
+    background-color: #0074D9;
+}
+
+.purple{
+    background-color: #B10DC9;
+}
+
+.full-zw{
+    width:10vh;
+}
+
+.half-zw{
+    width: 5vh;
+}
