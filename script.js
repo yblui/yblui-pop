@@ -15,22 +15,36 @@ function clk(element) {
             document.getElementById("player").innerText = playerOneName + " Won";
             playerOneScore++;
         }
-        if (playerOneScore > firstTo && playerOneScore >= playerTwoScore + winBy) document.getElementById("player").innerText = "Winner! " + playerOneName;
-        if (playerTwoScore > firstTo && playerTwoScore >= playerOneScore + winBy) document.getElementById("player").innerText = "Winner! " + playerTwoName;
+        if (playerOneScore >= firstTo && playerOneScore >= playerTwoScore + winBy) {
+            document.getElementById("winnerName").innerText = playerOneName
+            document.getElementById("winner").style.left = "0";
+            document.getElementById("settings").style.top = "0";
+        } else if (playerTwoScore >= firstTo && playerTwoScore >= playerOneScore + winBy) {
+            document.getElementById("winnerName").innerText = playerTwoName;
+            document.getElementById("winner").style.left = "0";
+            document.getElementById("settings").style.top = "0";
+        }
+        setTimeout(function () {
+            document.getElementById("winner").style.left = "100%";
+        }, 3000)
         xCoords = 0;
         dotsRemaining = 30;
         for (var x of document.getElementsByTagName("div")) {
-            if (x.style.backgroundColor == "gray") x.style.backgroundColor = ""
+            if (x.style.backgroundColor == "gray") x.style.backgroundColor = "";
         }
     }
+}
+
+function refreshPlayer() {
+    if (playerOnePlaying) document.getElementById("player").innerText = playerOneName + " is Playing";
+    else document.getElementById("player").innerText = playerTwoName + " is Playing";
 }
 
 function togglePlayer() {
     if (!xCoords) return;
     playerOnePlaying = !playerOnePlaying;
     xCoords = 0;
-    if (playerOnePlaying) document.getElementById("player").innerText = playerOneName + " is Playing";
-    else document.getElementById("player").innerText = playerTwoName + " is Playing";
+    refreshPlayer();
 }
 
 function play(p1name, p2name, ft, wb) {
@@ -39,4 +53,5 @@ function play(p1name, p2name, ft, wb) {
     firstTo = ft;
     winBy = wb;
     document.getElementById("settings").style.top = "-110%";
+    refreshPlayer();
 }
