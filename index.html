@@ -17,16 +17,13 @@
         <div class="purple">P</div>
         <div class="green">!</div>
         <form>
-            Player 1: <input type="text" value="Player 1" id="p1name" />
-        </form>
-        <form>
-            Player 2: <input type="text" value="Player 2" id="p2name" />
-        </form>
-        <form>
-            First to: <input type="text" value="3" id="gameFt" />
-        </form>
-        <form>
-            Win by: <input type="text" value="2" id="gameWb" />
+            <label>Player 1: <input type="text" value="Player 1" id="p1name" /></label>
+            <br />
+            <label>Player 2: <input type="text" value="Player 2" id="p2name" /></label>
+            <br />
+            <label>First to: <input type="text" value="3" id="gameFt" /></label>
+            <br />
+            <label>Win by: <input type="text" value="2" id="gameWb" /></label>
         </form>
         <button
             onclick="play(document.getElementById('p1name').value, document.getElementById('p2name').value, document.getElementById('gameFt').value, document.getElementById('gameWb').value);">Play&gt;</button>
@@ -76,7 +73,7 @@
         <span id="winnerName"></span>
     </div>
     <div id="points">
-        <p>Player 1 : Player 2</p>
+        <p><span id="player1">Player 1</span> : <span id="player2">Player 2</span></p>
         <p><span id="playerOnePoint">0</span> : <span id="playerTwoPoint">0</span></p>
     </div>
 </body>
