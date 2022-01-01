@@ -15,6 +15,12 @@ function clk(element) {
             document.getElementById("player").innerText = playerOneName + " Won";
             playerOneScore++;
         }
+        document.getElementById("playerOnePoint").innerText=playerOneScore;
+        document.getElementById("playerTwoPoint").innerText=playerTwoScore;
+        document.getElementById("points").style.left="0";
+        setTimeout(function () {
+            document.getElementById("points").style.left = "100%";
+        }, 3000)
         if (playerOneScore >= firstTo && playerOneScore >= playerTwoScore + winBy) {
             document.getElementById("winnerName").innerText = playerOneName
             document.getElementById("winner").style.left = "0";
