@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Yblui-pop!" />
     <title>yblui-Pop!</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
     <script src="script.js"></script>
 </head>
 
@@ -24,53 +26,64 @@
             <label>First to: <input type="text" value="3" id="gameFt" /></label>
             <br />
             <label>Win by: <input type="text" value="2" id="gameWb" /></label>
+            <br />
+            <label>Number Mode: <input type="checkbox" id="numModeOn" /></label>
         </form>
-        <button
-            onclick="play(document.getElementById('p1name').value, document.getElementById('p2name').value, document.getElementById('gameFt').value, document.getElementById('gameWb').value);">Play&gt;</button>
+        <button type="submit"
+            onclick="play(document.getElementById('p1name').value, document.getElementById('p2name').value, document.getElementById('gameFt').value, document.getElementById('gameWb').value, document.getElementById('numModeOn').checked);">Play&gt;</button>
     </div>
     <p id="player">Player 1 is Playing</p>
     <br />
-    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="1"></div>
-    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="2"></div>
-    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="3"></div>
-    <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="4"></div>
-    <br>
-    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="1"></div>
-    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="2"></div>
-    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="3"></div>
-    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="4"></div>
-    <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="5"></div>
-    <br>
-    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="1"></div>
-    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="2"></div>
-    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="3"></div>
-    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="4"></div>
-    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="5"></div>
-    <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="6"></div>
-    <br>
-    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="1"></div>
-    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="2"></div>
-    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="3"></div>
-    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="4"></div>
-    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="5"></div>
-    <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="6"></div>
-    <br>
-    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="1"></div>
-    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="2"></div>
-    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="3"></div>
-    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="4"></div>
-    <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="5"></div>
-    <br>
-    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="1"></div>
-    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="2"></div>
-    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="3"></div>
-    <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="4"></div>
-    <br />
-    <button class="btn-red" onclick="togglePlayer();">&lt;Continue&gt;</button>
-    <button class="btn-blue" onclick="togglePlayer();">&lt;Continue&gt;</button>
+    <div id="boardMode">
+        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="1"></div>
+        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="2"></div>
+        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="3"></div>
+        <div class="red" onclick="clk(this);" data-xcoordinate="1" data-ycoordinate="4"></div>
+        <br />
+        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="1"></div>
+        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="2"></div>
+        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="3"></div>
+        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="4"></div>
+        <div class="orange" onclick="clk(this);" data-xcoordinate="2" data-ycoordinate="5"></div>
+        <br />
+        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="1"></div>
+        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="2"></div>
+        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="3"></div>
+        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="4"></div>
+        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="5"></div>
+        <div class="yellow" onclick="clk(this);" data-xcoordinate="3" data-ycoordinate="6"></div>
+        <br />
+        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="1"></div>
+        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="2"></div>
+        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="3"></div>
+        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="4"></div>
+        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="5"></div>
+        <div class="green" onclick="clk(this);" data-xcoordinate="4" data-ycoordinate="6"></div>
+        <br />
+        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="1"></div>
+        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="2"></div>
+        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="3"></div>
+        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="4"></div>
+        <div class="blue" onclick="clk(this);" data-xcoordinate="5" data-ycoordinate="5"></div>
+        <br />
+        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="1"></div>
+        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="2"></div>
+        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="3"></div>
+        <div class="purple" onclick="clk(this);" data-xcoordinate="6" data-ycoordinate="4"></div>
+    </div>
+    <div id="numberMode">
+        <span class="number" data-num="4" data-xcoordinate="1" onclick="clkNumber(this);">4</span>
+        <span class="number" data-num="5" data-xcoordinate="2" onclick="clkNumber(this);">5</span>
+        <span class="number" data-num="6" data-xcoordinate="3" onclick="clkNumber(this);">6</span>
+        <span class="number" data-num="6" data-xcoordinate="4" onclick="clkNumber(this);">6</span>
+        <span class="number" data-num="5" data-xcoordinate="5" onclick="clkNumber(this);">5</span>
+        <span class="number" data-num="4" data-xcoordinate="6" onclick="clkNumber(this);">4</span>
+    </div>
+    <button class="btn-red" onclick="togglePlayer();" type="button">&lt;Continue&gt;</button>
+    <button class="btn-blue" onclick="togglePlayer();" type="button">&lt;Continue&gt;</button>
     <div id="winner">
         <p>Winner!</p>
-        <span id="winnerName"></span>
+        <span id="winnerName">Player 1</span>
     </div>
     <div id="points">
         <p><span id="player1">Player 1</span> : <span id="player2">Player 2</span></p>

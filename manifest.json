@@ -1,0 +1,8 @@
+{
+    "name": "Yblui-pop",
+    "description": "Yblui-pop!",
+    "short_name": "Yblui-pop",
+    "start_url": "/",
+    "display": "standalone",
+    "lang": "en-US"
+}
