@@ -74,8 +74,8 @@ function checkWin() {
         document.getElementById("winnerName").innerText = playerOneName;
         document.getElementById("winner").style.left = "0";
         document.getElementById("settings").style.top = "0";
-        playerOneScore=0;
-        playerTwoScore=0;
+        playerOneScore = 0;
+        playerTwoScore = 0;
         setTimeout(function () {
             document.getElementById("winner").style.left = "100%";
         }, 3000)
@@ -83,8 +83,8 @@ function checkWin() {
         document.getElementById("winnerName").innerText = playerTwoName;
         document.getElementById("winner").style.left = "0";
         document.getElementById("settings").style.top = "0";
-        playerOneScore=0;
-        playerTwoScore=0;
+        playerOneScore = 0;
+        playerTwoScore = 0;
         setTimeout(function () {
             document.getElementById("winner").style.left = "100%";
         }, 3000)
