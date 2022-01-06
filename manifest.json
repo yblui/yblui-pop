@@ -4,5 +4,12 @@
     "short_name": "Yblui-pop",
     "start_url": "/",
     "display": "standalone",
-    "lang": "en-US"
+    "lang": "en-US",
+    "icons":[
+        {
+            "src": "favicon.jpg",
+            "sizes": "256x256",
+            "type": "image/jpeg"
+        }
+    ]
 }
